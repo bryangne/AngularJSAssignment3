@@ -10,8 +10,11 @@ export class Tab1Page {
   newTask: string;
   constructor() {
     this.newTask = '';
-    this.toDoList = JSON.parse(localStorage.getItem('todolist'));
-    // localStorage.setItem('todolist', JSON.stringify(this.toDoList));
+    // Get the existing list ONLY if it exists.
+    // Otherwise, a new one is created when a task is added.
+    if(localStorage.getItem('todolist') !== null) {
+      this.toDoList = JSON.parse(localStorage.getItem('todolist'));
+    }
   }
 
   // ionViewDidLoad() {
@@ -21,6 +24,14 @@ export class Tab1Page {
 
   addNewTask() {
     this.toDoList.push(this.newTask);
+    localStorage.setItem('todolist', JSON.stringify(this.toDoList));
+    this.newTask = '';
+  }
+
+  removeTask(task: string) {
+    // alert('remove item ' + task);
+    const index = this.toDoList.indexOf(task, 0);
+    this.toDoList.splice(index, 1);
     localStorage.setItem('todolist', JSON.stringify(this.toDoList));
   }
 }
