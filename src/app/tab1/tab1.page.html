@@ -14,11 +14,14 @@
     Add
   </ion-button>
   <ion-list>
+    <ion-reorder-group (ionItemReorder)="reorderTask($event)" disabled="false">
     <ion-item *ngFor="let toDoEntry of toDoList">
-        <button ion-button (click)="removeTask(toDoEntry)">
-            <ion-icon name="trash"></ion-icon>Delete
-          </button>
+      <ion-reorder></ion-reorder>
+      <button ion-button (click)="removeTask(toDoEntry)">
+        <ion-icon name="trash"></ion-icon> Delete
+      </button>
       <ion-item>{{ toDoEntry }}</ion-item>
     </ion-item>
-  </ion-list>
+  </ion-reorder-group>
+</ion-list>
 </ion-content>

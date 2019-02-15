@@ -34,4 +34,11 @@ export class Tab1Page {
     this.toDoList.splice(index, 1);
     localStorage.setItem('todolist', JSON.stringify(this.toDoList));
   }
+
+  reorderTask(ev) {
+    const itemMove = this.toDoList.splice(ev.detail.from, 1)[0];
+    this.toDoList.splice(ev.detail.to, 0, itemMove);
+    localStorage.setItem('todolist', JSON.stringify(this.toDoList));
+    ev.detail.complete();
+  }
 }
