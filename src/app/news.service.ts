@@ -41,15 +41,48 @@ export class NewsService {
     return this.newsArticles[index];
   }
   getArticleTitle(index: number): string {
-    return this.getArticle(index).title;
+    let title: string;
+    try {
+      title = this.getArticle(index).title;
+    } catch (error) {
+      title = 'Error: title not found';
+    }
+    return title;
   }
   getArticleUrl(index: number): string {
-    return this.getArticle(index).url;
+    let url: string;
+    try {
+      url = this.getArticle(index).url
+    } catch (error) {
+      url = 'Error: Url not found';
+    }
+    return url;
   }
   getArticleImageUrl(index: number): string {
-    return this.getArticle(index).urlToImage;
+    let image: string;
+    try {
+      image = this.getArticle(index).urlToImage;
+    } catch (error) {
+      image = './notfound.png';
+    }
+    return image;
   }
   getArticleContent(index: number): string {
-    return this.getArticle(index).content;
+    let content: string;
+    try {
+      content = this.getArticle(index).content;
+    } catch (error) {
+      content = 'Error: content not found';
+    }
+    return content;
+  }
+  getArticleDescription(index: number): string {
+    let description: string;
+    try {
+      description = this.getArticle(index).description;
+    } catch (error) {
+      description = 'Error: description not found';
+    }
+    return description;
   }
 }

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)='goBack()'>
+      Back
+    </ion-button>
+    <br>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-img [src]="imageUrl"></ion-img>
+  <p>{{ description }}</p>
+</ion-content>
