@@ -9,11 +9,17 @@ import { NewsObject } from '../news.model';
 })
 export class Tab2Page {
   newsService: NewsService;
+  titles: string[];
+
   constructor(newsService: NewsService) {
     this.newsService = newsService;
+    this.titles = [];
   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    for(let i = 0; i < 10; i++) {
+      this.titles.push(this.newsService.getArticleTitle(i));
+    }
   }
 }

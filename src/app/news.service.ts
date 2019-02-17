@@ -35,7 +35,6 @@ export class NewsService {
     },
     error => {
       console.log(error);
-      console.log('wumbo');
     });
   }
   getArticle(index: number): NewsObject {

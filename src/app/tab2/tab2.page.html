@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Top News Articles
+      Top 10 News Articles
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<ion-content></ion-content>
+
+<ion-content>
+  <br>
+  <ion-item *ngFor="let title of titles">
+    <ion-label>{{ title }}</ion-label>
+  </ion-item>
+</ion-content>
