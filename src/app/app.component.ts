@@ -16,6 +16,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private newsService: NewsService
   ) {
+    newsService.getTopNews();
     this.initializeApp();
   }
 

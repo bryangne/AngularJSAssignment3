@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NewsService } from '../news.service';
+import { NewsObject } from '../news.model';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  constructor() {
-    // console.log('hi from tab 2');
+  newsService: NewsService;
+  constructor(newsService: NewsService) {
+    this.newsService = newsService;
+  }
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
   }
 }
