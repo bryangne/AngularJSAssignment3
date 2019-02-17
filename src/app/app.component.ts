@@ -16,7 +16,6 @@ export class AppComponent {
     private statusBar: StatusBar,
     private newsService: NewsService
   ) {
-    newsService.getTopNews();
     this.initializeApp();
   }
 
@@ -24,6 +23,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.newsService.getTopNews();
     });
   }
 }

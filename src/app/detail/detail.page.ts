@@ -9,14 +9,12 @@ import { Location } from '@angular/common';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-  newsService: NewsService;
   id: number;
   title: string;
   imageUrl: string;
   content: string;
   description: string;
-  constructor(private route: ActivatedRoute, newsService: NewsService, private location: Location) {
-    this.newsService = newsService;
+  constructor(private route: ActivatedRoute, private newsService: NewsService, private location: Location) {
   }
 
   ngOnInit() {

@@ -7,17 +7,17 @@ import { NewsService } from '../news.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  newsService: NewsService;
   titles: string[] = [];
 
-  constructor(newsService: NewsService) {
-    this.newsService = newsService;
-    this.newsService.getTopNews();
+  constructor(private newsService: NewsService) {
+    // this.newsService = newsService;
+    // this.newsService.getTopNews();
     // this.titles = [];
   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    this.newsService.getTopNews();
     for(let i = 0; i < 10; i++) {
       this.titles.push(this.newsService.getArticleTitle(i));
     }
